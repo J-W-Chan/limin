@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>2021年成人学历考试预报名系统</title>
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/cxcalendar.css" type="text/css" />
+		<link type="text/css" href="css/cssxyf.css" rel="stylesheet" />
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/maydate.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//倒计时js开始
+				var mydate = new Date();
+				$(".month").html(mydate.getMonth() + 1)
+				$(".day").html(mydate.getDate())
+
+			});
+		</script>
+		<script type="text/javascript" src="js/timexyf.js"></script>
+		<script type="text/javascript" src="js/calendar.js"></script>
+	</head>
+
+	<body>
+
+		<div class="newswp">
+			<div class="newswp_left">
+				<div class="newswp_leftlogo">
+					<img src="images/newswp_leftlogo_2.png" alt="" />
+				</div>
+				<div class="newswp_leftnav">
+					<ul>
+						<li>
+							<a href="index.html"> <img src="images/pic1.png" alt="" /> 信息审核注册系统 </a>
+						</li>
+						<li>
+							<a href="yuanxiao.html"> <img src="images/school.png" alt="" style="width:20px;" /> 院校专业名额 </a>
+						</li>
+						<li>
+							<a href="index-bulu.html"> <img src="images/pic2.png" alt="" /> 补录系统 </a>
+						</li>
+						<li>
+							<a href="index-zhuxuejin.html"> <img src="images/pic3.png" alt="" /> 助学金申请系统 </a>
+						</li>
+						<li>
+							<a href="index-tuanbao.html"> <img src="images/pic4.png" alt="" /> 团报系统 </a>
+						</li>
+						<li>
+							<a href="javascript:;" class="current"> <img src="images/pic5.png" alt="" /> 学员信息系统 </a>
+						</li>
+						<li>
+							<a href="index-fenqi.html"> <img src="images/pic6.png" alt="" /> 分期申请系统 </a>
+						</li>
+						<li>
+							<a href="index-yuyue.html"> <img src="images/pic7.png" alt="" /> 预约系统 </a>
+						</li>
+						<li>
+							<a href="index-baoxian.html"> <img src="images/pic8.png" alt="" /> 保险申请系统 </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="newswp_right">
+				<div class="right_swp">
+					<div class="rightmain_top">
+						<ul>
+							<li class="left"> 全国历年学员信息系统 </li>
+							<li class="right">
+								<a href="index.html"> <img src="images/img1.png" alt="" /> 返回主菜单 </a>
+							</li>
+						</ul>
+					</div>
+					<div class="rightmain_content">
+						<div class="content">
+							<div class="content_nav">
+								<ul>
+									<li class="tab1 hot"> 学员信息系统 </li>
+									<li class="tab2"> 登录须知 </li>
+								</ul>
+							</div>
+							<div class="new_page1">
+								<div class="shijian" style="width: 100%; height: 26px;">
+									<div id="showtime"></div>
+								</div>
+								<h1 style="font-size: 26px; height: 48px;">提醒：本批次报名即将截止，自考档案通道将于<span id="spantime"></span>23:59:59关闭</h1>
+								<form name="messageForm" method="post" id="messageForm1">
+									<table width="980" border="0" bgcolor="#666666" cellpadding="0" cellspacing="1" style="line-height:46px; width: 100%; background: #d9dee1; color: #717171;  margin:0 auto;">
+										
+										<tbody>
+											<tr>
+												<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
+													<p style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; "> <span class="line"></span> 学员信息查询 </p>
+												</td>
+											</tr>
+											<tr>
+												<td width="153" align="center" bgcolor="#FFFFFF">
+													<p>地区</p>
+												</td>
+												<td width="194" align="center" bgcolor="#FFFFFF">
+													<select style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+														<option>广东</option>
+														<option>上海</option>
+														<option>北京</option>
+														<option>天津</option>
+														<option>河北</option>
+														<option>山西</option>
+														<option>内蒙古</option>
+														<option>辽宁</option>
+														<option>吉林</option>
+														<option>黑龙江</option>
+														<option>上海</option>
+														<option>江苏</option>
+														<option>浙江</option>
+														<option>安徽</option>
+														<option>福建</option>
+														<option>江西</option>
+														<option>山东</option>
+														<option>河南</option>
+														<option>湖北</option>
+														<option>湖南</option>
+														<option>广西</option>
+														<option>海南</option>
+														<option>重庆</option>
+														<option>四川</option>
+														<option>贵州</option>
+														<option>云南</option>
+														<option>西藏</option>
+														<option>陕西</option>
+														<option>甘肃</option>
+														<option>青海</option>
+														<option>宁夏</option>
+														<option>新疆</option>
+													</select>
+												</td>
+												<td width="153" align="center" bgcolor="#FFFFFF">
+													<p>时间</p>
+												</td>
+												<td width="194" align="center" bgcolor="#FFFFFF">
+													<select style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+														<option>2021年4月</option>
+														<option>2021年10月</option>
+														<option>2021年7月</option>
+														<option>2021年4月</option>
+														<option>2021年1月</option>
+														<option>2016年10月</option>
+														<option>2016年7月</option>
+														<option>2016年4月</option>
+														<option>2016年1月</option>
+														<option>2015年10月</option>
+														<option>2015年7月</option>
+														<option>2015年4月</option>
+														<option>2015年1月</option>
+														<option>2014年10月</option>
+														<option>2014年7月</option>
+														<option>2014年4月</option>
+														<option>2014年1月</option>
+													</select>
+												</td>
+												<td width="169" align="center" bgcolor="#FFFFFF">
+													<p style="width:158px;height:31px;background:#3275ea;color:#fff; line-height:31px; border-radius: 3px; font-size: 13px; cursor:pointer;">查询</p>
+												</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">考试人数</td>
+												<td align="center" bgcolor="#FFFFFF">3125</td>
+												<td align="center" bgcolor="#FFFFFF">就业率</td>
+												<td align="center" bgcolor="#FFFFFF"><span style="font-weight:bold;color:#3275ea;">87.3%</span></td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">通过人数</td>
+												<td align="center" bgcolor="#FFFFFF">2906</td>
+												<td align="center" bgcolor="#FFFFFF">500强offer数</td>
+												<td align="center" bgcolor="#FFFFFF">200</td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">通过率</td>
+												<td align="center" bgcolor="#FFFFFF"><span style="font-weight:bold;color:#3275ea;">92.99%</span></td>
+												<td align="center" bgcolor="#FFFFFF">就业满意度</td>
+												<td align="center" bgcolor="#FFFFFF">80.21%</td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">专科毕业人数</td>
+												<td align="center" bgcolor="#FFFFFF">1056</td>
+												<td align="center" bgcolor="#FFFFFF">本科毕业人数</td>
+												<td align="center" bgcolor="#FFFFFF">1850</td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">专科就业0ffer总数</td>
+												<td align="center" bgcolor="#FFFFFF">1945</td>
+												<td align="center" bgcolor="#FFFFFF">本科就业offer总数</td>
+												<td align="center" bgcolor="#FFFFFF">5066</td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									<table width="980" border="0" bgcolor="#666666" cellpadding="0" cellspacing="1" style="line-height:46px; width: 100%; background: #d9dee1; color: #717171;  margin:50px auto 0;">
+										<tbody>
+											<tr>
+												<td height="52" colspan="20" align="left" bgcolor="#f6f6f6">
+													<p style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; "> <span class="line"></span> 学员信息总览 </p>
+												</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">学员姓名</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">报考专业</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">手机号</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">身份证后四位</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">学习状态</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是否毕业</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">获得证书</td>
+												<td width="128" height="40" colspan="1" align="center" bgcolor="#FFFFFF">offer数</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">聂剑平</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">155****0920</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************727X</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">3</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">胡成祥</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">工商企业管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">155****8887</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************5012</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">本科毕业证、本科学位证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">4</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">王汇杉</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">131****7700</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************2598</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF">1</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">刘伟</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">工商企业管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">131****2288</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************6575</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">4</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">李征</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">汉语言</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">188****8501</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************2512</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF">2</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">闫宇</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">188****3847</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************8137</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">本科毕业证、本科学位证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">5</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">程俊</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">工商企业管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">156****9760</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************311X</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">本科毕业证、本科学位证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">4</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">何伟</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">英语</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">157****9124</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************727X</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF">2</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">江良</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">商务管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">153****9717</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************2598</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">专科毕业证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">3</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">霍远秦</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政管理</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">189****3251</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">**************5012</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">完成</td>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">是</td>
+												<td height="40" colspan="3" align="center" bgcolor="#FFFFFF">本科毕业证、本科学位证</td>
+												<td height="40" colspan="1" align="center" bgcolor="#FFFFFF" style="color:#3275ea;">3</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="20" align="center" bgcolor="#FFFFFF"><span style="width:140px;height:30px;line-height:30px;background:#484848;color:#fff;padding:3px 6px;cursor:pointer;">上一页</span> 第1页/共313页 <span style="width:140px;height:30px;line-height:30px;background:#9e9e9e;color:#fff;padding:3px 6px;cursor:pointer;">下一页</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+							</div>
+							<div class="new_page2" style="display: none;">
+								<div class="page2_title">
+									中培教育学员学历查询唯一系统，仅供中培教育内部员工查询
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="new_btn2" style="position: fixed; left: 10px; bottom: 65px;">
+			<a onclick="change_show()" style=" cursor:pointer; display:block; background:#38b7ff; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">点击修改名额</a>
+		</div>
+		<div class="new_btn3" style="position: fixed; left: 10px; bottom: 10px;">
+			<a onclick="line_show()" style=" cursor:pointer; display:block; background:#ff5f65; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">点击修改到校时间</a>
+		</div>
+		<div class="tc">
+			<h3>温馨提示：</h3>
+			<p>您好，恭喜您申请成功！您的受理号码为JS1605，请您于2021年<span class="curMonth"></span>月<span class="curDate"></span>日21：00之前到达分校完成现场确认。</p>
+			<span class="confirm">确认</span>
+			<span class="close">X</span>
+		</div>
+		<script>
+			$(".tc span").click(function() {
+				$(".tc").css("display", "none");
+			});
+		
+			$(".tab1").click(function() {
+				$(".new_page1").show();
+				$(".new_page2").hide();
+				$(".tab1").addClass('hot');
+				$(".tab2").removeClass('hot');
+			})
+			$(".tab2").click(function() {
+				$(".new_page1").hide();
+				$(".new_page2").show();
+				$(".tab2").addClass('hot');
+				$(".tab1").removeClass('hot');
+			})
+		</script>
+		<script>
+			$('.input_cxcalendar').each(function() {
+				var a = new Calendar({
+					targetCls: $(this),
+					type: 'yyyy-mm-dd HH:MM',
+					wday: 7
+				}, function(val) {
+					console.log(val);
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

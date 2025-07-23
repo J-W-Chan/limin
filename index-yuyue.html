@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>2021年成人学历考试预报名系统</title>
+		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/cxcalendar.css" type="text/css" />
+		<link type="text/css" href="css/cssxyf.css" rel="stylesheet" />
+		<link type="text/css" href="css/style.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/maydate.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				//倒计时js开始
+				var mydate = new Date();
+				$(".month").html(mydate.getMonth() + 1)
+				$(".day").html(mydate.getDate())
+
+			});
+		</script>
+		<script type="text/javascript" src="js/timexyf.js"></script>
+		<script type="text/javascript" src="js/calendar.js"></script>
+	</head>
+
+	<body>
+
+
+		<div class="newswp">
+			<div class="newswp_left">
+				<div class="newswp_leftlogo">
+					<img src="images/newswp_leftlogo_2.png" alt="" />
+				</div>
+				<div class="newswp_leftnav">
+					<ul>
+						<li>
+							<a href="index.html"> <img src="images/pic1.png" alt="" /> 信息审核注册系统 </a>
+						</li>
+						<li>
+							<a href="yuanxiao.html"> <img src="images/school.png" alt="" style="width:20px;" /> 院校专业名额 </a>
+						</li>
+						<li>
+							<a href="index-bulu.html"> <img src="images/pic2.png" alt="" /> 补录系统 </a>
+						</li>
+						<li>
+							<a href="index-zhuxuejin.html"> <img src="images/pic3.png" alt="" /> 助学金申请系统 </a>
+						</li>
+						<li>
+							<a href="index-tuanbao.html"> <img src="images/pic4.png" alt="" /> 团报系统 </a>
+						</li>
+						<li>
+							<a href="index-xinxi.html"> <img src="images/pic5.png" alt="" /> 学员信息系统 </a>
+						</li>
+						<li>
+							<a href="index-fenqi.html"> <img src="images/pic6.png" alt="" /> 分期申请系统 </a>
+						</li>
+						<li>
+							<a href="javascript:;" class="current"> <img src="images/pic7.png" alt="" /> 预约系统 </a>
+						</li>
+						<li>
+							<a href="index-baoxian.html"> <img src="images/pic8.png" alt="" /> 保险申请系统 </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="newswp_right">
+				<div class="right_swp">
+					<div class="rightmain_top">
+						<ul>
+							<li class="left"> 分校预约系统 </li>
+							<li class="right">
+								<a href="index.html"> <img src="images/img1.png" alt="" /> 返回主菜单 </a>
+							</li>
+						</ul>
+					</div>
+					<div class="rightmain_content">
+						<div class="content">
+							<div class="content_nav">
+								<ul>
+									<li class="tab1 hot"> 预约申请系统 </li>
+									<li class="tab2"> 申请须知 </li>
+								</ul>
+							</div>
+							<div class="new_page1">
+								<div class="shijian" style="width: 100%; height: 26px;">
+									<div id="showtime"></div>
+								</div>
+								<h1 style="font-size: 26px; height: 48px;">提醒：本批次报名即将截止，自考档案通道将于<span id="spantime"></span>23:59:59关闭</h1>
+								<form name="messageForm" method="post" id="messageForm1">
+									<table width="980" border="0" bgcolor="#666666" cellpadding="0" cellspacing="1" style="line-height:46px; width: 100%; background: #d9dee1; color: #717171;  margin:0 auto;">
+
+										<tbody>
+											<tr>
+												<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
+													<p style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; "> <span class="line"></span> 预约名额查询 </p>
+												</td>
+											</tr>
+											<tr>
+												<td width="104" align="center" bgcolor="#FFFFFF">
+													<p>分校</p>
+												</td>
+												<td width="232" align="center" bgcolor="#FFFFFF"> <input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" placeholder="请输入分校名称" /> </td>
+												<td width="215" align="center" bgcolor="#FFFFFF">
+													<p>班型</p>
+												</td>
+												<td width="254" align="center" bgcolor="#FFFFFF"> <input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" placeholder="请输入班型" /> </td>
+												<td width="169" align="center" bgcolor="#FFFFFF">
+													<p style="width:158px;height:31px;background:#3275ea;color:#fff; line-height:31px; border-radius: 3px; font-size: 13px; cursor:pointer;">查询</p>
+												</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td colspan="3" align="center" bgcolor="#FFFFFF">总名额：<span class="all">80</span> &nbsp; &nbsp; <span>已申请名额：<span id="a1">60</span></span>&nbsp; &nbsp; 剩余名额：<span style="color:#3275ea;" id="b1">20</span><span style="font-weight:bold;color:red;"></span></td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
+													<p style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; "> <span class="line"></span> 预约申请表 </p>
+												</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">
+													<p><span style="color:red;">*</span>姓名</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"><input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" /></td>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>性别</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF">
+													<select style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+														<option>男</option>
+														<option>女</option>
+													</select>
+												</td>
+												<td width="169" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>证件类型</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF">
+													<select name="msg.field4" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+														<option>居民身份证</option>
+														<option>港澳台身份证</option>
+														<option>华侨身份证（无身份证可填护照）</option>
+														<option>其他</option>
+													</select>
+												</td>
+												<td align="center" bgcolor="#FFFFFF">
+													<p><span style="color:red;">*</span>证件号码</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"><input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" /></td>
+												<td width="169" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="32" align="center" bgcolor="#FFFFFF"><span style="color:red;">*</span>手机号码</td>
+												<td height="32" align="center" bgcolor="#FFFFFF"><input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" name="msg.phone" class="yuyue-tel" /></td>
+												<td height="32" align="center" bgcolor="#FFFFFF">现阶段学历</td>
+												<td height="32" align="center" bgcolor="#FFFFFF">
+													<select name="msg.field5" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+														<option>无</option>
+														<option>初中</option>
+														<option>高中</option>
+														<option>中专</option>
+														<option>大专</option>
+														<option>本科</option>
+														<option>其他</option>
+													</select>
+												</td>
+												<td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>分校</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"> <input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" placeholder="请输入分校名称" /> </td>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>预约班型</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"> <input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" placeholder="请输入班型" /> </td>
+												<td width="169" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>报考学校</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"> <input type="text" style="background-color:#fff;width:155px;height:31px; line-height:31px;" placeholder="请输入学校名称" /> </td>
+												<td align="center" bgcolor="#FFFFFF">
+													<p>预约时间</p>
+												</td>
+												<td align="center" bgcolor="#FFFFFF"> <input name="mydate" type="text" class="input_cxcalendar" style="width:155px;height:31px;line-height:31px;" /> </td>
+												<td width="169" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="60" colspan="5" align="center" bgcolor="#FFFFFF"><input style="width:180px;height:45px;background:#38b7ff; font-size: 16px; color:#fff; border-radius: 5px; line-height:45px;cursor:pointer;outline:none;border:0;text-align:center;" class="yuyue-btn" value="立即申请" type="button" /> </td>
+											</tr>
+											<tr>
+												<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
+													<p style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; "> <span class="line"></span> 预约名单一览表 </p>
+												</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">学员姓名</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">班型</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">接待老师</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">柯栋梁</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">深圳校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">汉语言直播班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">刘白</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">刘翠翠</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">天河校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">工商名校取证班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">王文丽</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">戚晓芳</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">深圳罗湖校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">汉语言专本直升班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">任笑乐</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">齐珊珊</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">厦门校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政VIP名师专本连读班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">柳伟</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">邱栋</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">南昌校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">工商名校取证班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">张平安</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">孙小兵</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">合肥校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">汉语言集训班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">陈永清</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">水博超</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">中关村校区</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">行政VIP名师直通班</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">何肖可</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+												<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
+											</tr>
+											<tr>
+												<td height="40" colspan="5" align="center" bgcolor="#FFFFFF"><span style="width:140px;height:30px;line-height:30px;background:#484848;color:#fff;padding:3px 6px;cursor:pointer;">上一页</span> 第5页/共5页 <span style="width:140px;height:30px;line-height:30px;background:#9e9e9e;color:#fff;padding:3px 6px;cursor:pointer;">下一页</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+							</div>
+							<div class="new_page2" style="display: none;">
+								<div class="page2_title">
+									中培教育分校预约系统须知
+								</div>
+								<div class="page2_text">
+									<p>中培教育作为官方授权的教育服务机构，拥有多年的自考培训经验，已帮助30万学员完成梦想，每年的自考通过率高达95%。中培教育旗下分校达上百家，因为按规定每个学历课程班型人数不超过50人，为了限制班级人数，同时也为了方便学员到分校更好的进行咨询及报名，集团总部特此开通了分校预约系统。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="new_btn2" style="position: fixed; left: 10px; bottom: 65px;">
+			<a onclick="change_show()" style=" cursor:pointer; display:block; background:#38b7ff; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">点击修改名额</a>
+		</div>
+		<div class="new_btn3" style="position: fixed; left: 10px; bottom: 10px;">
+			<a onclick="line_show()" style=" cursor:pointer; display:block; background:#ff5f65; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">点击修改到校时间</a>
+		</div>
+		<!-- <div class="new_btn">
+        <a onclick="show1()" style=" cursor:pointer; display:block; background:#ff5f65; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">点击变化名额</a>
+    </div> -->
+		<div class="change_swp" style="width: 100%; height: 100%; background: rgba(0,0,0,0.5); position: fixed; left: 0; top:0; display: none; z-index: 9999;">
+			<div class="change" style="width: 480px; height: 480px; color: #333; background: #fff; padding:39px 20px 0 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; box-shadow: 0px 0px 20px rgba(50,117,234,0.3); text-align: left; font-size: 16px; margin-left: -240px; margin-top: -240px; border-radius: 4px; border: 1px solid #86a8e4;">
+				<div onclick="change_no()" style="position: absolute; cursor: pointer; right: -48px; top: 0px;">
+					<img src="images/no.png" alt="" />
+				</div>
+				<div class="change_dayer" style="">
+					<p style="color: #3275ea; font-size: 17px"> <span style="width: 2px; height: 16px; margin-right: 8px;" class="line"></span>修改截止日期 </p>
+					<div style="font-size: 15px; border-bottom: 1px dashed #e1e1e1;">
+						<span style="width: 115px; display: inline-block; text-align: right;"> 截止日期： </span>
+						<input type="text" class="dayer" style="width: 284px; padding-left: 12px; height: 38px; line-height: 38px; font-size: 15px; margin:30px 0; border-radius: 5px; box-sizing: border-box;" placeholder="请输入xxxx年xx月xx日" />
+					</div>
+				</div>
+				<div class="change_text">
+					<p style="color: #3275ea; font-size: 17px; padding-top: 22px;"> <span style="width: 2px; height: 16px; margin-right: 8px;" class="line"></span> 修改申请名额 </p>
+					<div style="margin-top:20px; font-size: 15px;">
+						<span style="width: 115px; display: inline-block; text-align: right;"> 总名额： </span>
+						<input type="text" class="btn1" style="width: 284px; height: 38px; line-height: 38px; font-size: 15px; border-radius: 5px;" placeholder="请输入总名额数" />
+					</div>
+					<div style="margin-top:20px; font-size: 15px;">
+						<span style="width: 115px; display: inline-block; text-align: right;"> 已申请名额： </span>
+						<input type="text" class="btn2" style="width: 284px; height: 38px; line-height: 38px; font-size: 15px; border-radius: 5px;" placeholder="请输入已申请名额数" />
+					</div>
+					<div style="margin-top:20px; margin-bottom:24px;">
+						<span style="width: 115px; display: inline-block; text-align: right;"> 剩余名额： </span>
+						<input type="text" onclick="change_btn3()" class="btn3" style="width: 284px; height: 38px; line-height: 38px; font-size: 15px; border-radius: 5px;" placeholder="点击获取剩余名额" />
+					</div>
+				</div>
+				<div class="change_btn" style="padding-left: 115px;">
+					<button onclick="change_timer()" style="cursor: pointer; background: #3275ea; color: #ffffff; font-size: 16px; width: 110px; height: 40px; border:none; line-height: 38px; border-radius: 5px;">保存</button>
+					<button onclick="change_del()" style="cursor: pointer; background: #d5d5d5; color: #666666; font-size: 16px; width: 110px; height: 40px; border:none; line-height: 38px; border-radius: 5px;">清空</button>
+				</div>
+			</div>
+		</div>
+		<div class="line_swp" style="width: 100%; height: 100%; background: rgba(0,0,0,0.5); position: fixed; left: 0; top:0; display: none; z-index: 9999;">
+			<div class="change" style="width: 480px; height: 260px; color: #333; background: #fff; padding:39px 20px 0 20px; box-sizing: border-box; position: fixed; left: 50%; top: 50%; box-shadow: 0px 0px 20px rgba(50,117,234,0.3); text-align: left; font-size: 16px; margin-left: -240px; margin-top: -130px; border-radius: 4px; border: 1px solid #86a8e4;">
+				<div onclick="change_no1()" style="position: absolute; cursor: pointer; right: -48px; top: 0px;">
+					<img src="images/no.png" alt="" />
+				</div>
+				<div class="change_dayer" style="">
+					<p style="color: #ff5f65; font-size: 17px"> <span style="width: 2px; height: 16px; margin-right: 8px; background: #ff5f65;" class="line"></span>修改到校日期 </p>
+					<div style="font-size: 15px;">
+						<span style="width: 115px; vertical-align: 30px; display: inline-block; text-align: right;"> 到校日期： </span>
+						<div style="width: 284px; margin:30px 0; display: inline-block;">
+							<input type="text" class="dayer1" style="width: 284px; padding-left: 12px; height: 38px; line-height: 38px; font-size: 15px; border-radius: 5px; box-sizing: border-box;" placeholder="请输入xxxx年xx月xx日xx:xx" />
+							<p style="color: #999; font-size: 15px; line-height: 30px; padding-left: 10px;">例：2021年9月14日21：00</p>
+						</div>
+					</div>
+				</div>
+				<div class="change_btn" style="padding-left: 115px;">
+					<button onclick="change_timer1()" style="cursor: pointer; background: #ff5f65; color: #ffffff; font-size: 16px; width: 110px; height: 40px; border:none; line-height: 38px; border-radius: 5px;">保存</button>
+					<button onclick="change_del1()" style="cursor: pointer; background: #d5d5d5; color: #666666; font-size: 16px; width: 110px; height: 40px; border:none; line-height: 38px; border-radius: 5px;">清空</button>
+				</div>
+			</div>
+		</div>
+		<div class="tc">
+			<h3>温馨提示：</h3>
+			<p>您好，恭喜您申请成功！您的受理号码为JS<span class="curNum"></span>，请您于<span class="curtime">2021年<span class="curMonth"></span>月<span class="curDate"></span>日21：00</span>之前到达分校完成现场确认。</p>
+			<span class="confirm">确认</span>
+			<span class="close">X</span>
+		</div>
+		<script type="text/javascript">
+			function change_timer() {
+				var timer = $(".dayer").val();
+				var var1 = $(".btn1").val();
+				var var2 = $(".btn2").val();
+				var num2 = $(".btn1").val() - $(".btn2").val();
+				if(!($('.dayer').val() == '')) {
+					$("#spantime").text(timer);
+				}
+				if(!($('.btn1').val() == '') && !($('.btn2').val() == '') && !($('.btn3').val() == '')) {
+					$(".all").text(var1);
+					$("#a1").text(var2);
+					$("#b1").text(num2);
+				}
+				$(".change_swp").hide();
+				$(".btn1,.btn2,.btn3,.dayer").val('');
+			}
+
+			function change_timer1() {
+				var timer1 = $(".dayer1").val();
+				if(!($('.dayer1').val() == '')) {
+					$(".curtime").text(timer1);
+				} else {
+
+				}
+				$(".line_swp").hide();
+				$(".dayer1").val('');
+			}
+
+			function change_btn3() {
+				var num1 = $(".btn1").val() - $(".btn2").val();
+				$(".btn3").val(num1);
+			}
+
+			function change_show() {
+				$(".change_swp").show();
+			}
+
+			function line_show() {
+				$(".line_swp").show();
+			}
+
+			function change_no() {
+				$(".change_swp").hide();
+				$(".btn1,.btn2,.btn3,.dayer").val('');
+			}
+
+			function change_no1() {
+				$(".line_swp").hide();
+				$(".dayer1").val('');
+			}
+
+			function change_del() {
+				$(".btn1,.btn2,.btn3,.dayer").val('');
+			}
+
+			function change_del1() {
+				$(".dayer1").val('');
+			}
+
+			function show1() {
+				var a1 = parseInt($("#a1").html());
+				var b1 = parseInt($("#b1").html());
+				if(b1 <= 0) {
+					alert("剩余名额不能小于0,请刷新页面");
+				}
+				if(b1 > 0) {
+					$("#a1").html(a1 + 1);
+					$("#b1").html(b1 - 1);
+				}
+			}
+		</script>
+		<script>
+			$(".close,.confirm").click(function() {
+				$(".tc").css('display', 'none');
+			})
+
+			$(".tab1").click(function() {
+				$(".new_page1").show();
+				$(".new_page2").hide();
+				$(".tab1").addClass('hot');
+				$(".tab2").removeClass('hot');
+			})
+			$(".tab2").click(function() {
+				$(".new_page1").hide();
+				$(".new_page2").show();
+				$(".tab2").addClass('hot');
+				$(".tab1").removeClass('hot');
+			})
+		</script>
+		<script type="text/javascript">
+			$(".yuyue-btn").click(function(e) {
+				var phone = /^1[3|4|5|6|7|8|9]\d{9}$/;
+				if(!phone.test($(".yuyue-tel").val())) {
+					alert('请输入正确手机号');
+				} else {
+					$('.tc').show();
+				}
+			})
+		</script>
+
+		<script>
+			$('.input_cxcalendar').each(function() {
+				var a = new Calendar({
+					targetCls: $(this),
+					type: 'yyyy-mm-dd HH:MM',
+					wday: 7
+				}, function(val) {
+					console.log(val);
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

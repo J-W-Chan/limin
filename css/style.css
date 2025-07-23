@@ -1,0 +1,245 @@
+﻿.change_swp input::-webkit-input-placeholder {
+  color: #999999;
+}
+.change_swp input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #999999;
+}
+.change_swp input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #999999;
+}
+.change_swp input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #999999;
+}
+
+.line_swp input::-webkit-input-placeholder {
+  color: #999999;
+}
+.line_swp input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #999999;
+}
+.line_swp input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #999999;
+}
+.line_swp input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #999999;
+}
+
+body {
+  overflow: hidden !important;
+  font-size: 14px !important;
+  height: 100% !important;
+  font-family: "微软雅黑" !important;
+}
+html {
+  height: 100%;
+}
+.shijian {
+  padding-top: 10px !important;
+  height: 22px !important;
+}
+.new_page1 h1 {
+  font-size: 22px !important;
+  height: 42px !important;
+  text-align: center;
+}
+.inner_main {
+  padding-top: 142px;
+  padding-bottom: 142px;
+}
+.inner {
+  padding-top: 60px;
+}
+.newswp {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.newswp_left {
+  width: 240px;
+  height: 100%;
+  background: #303b4d;
+  color: #fff;
+  overflow: auto;
+}
+.new_btn {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+}
+.newswp_right {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.rightmain_top {
+  width: 100%;
+  height: 65px;
+  line-height: 65px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  color: #666666;
+  font-size: 21px;
+  background: #fff;
+  border-bottom: 1px solid #d7d9dd;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.rightmain_top ul {
+  overflow: hidden;
+  height: 65px;
+}
+.rightmain_top ul li.left {
+  float: left;
+}
+.rightmain_top ul li.right {
+  float: right;
+}
+.rightmain_top ul li.right a {
+  color: #666666;
+  font-size: 16px;
+}
+.rightmain_top ul li.right a img {
+  vertical-align: -2px;
+  width: 18px;
+}
+.newswp_leftnav {
+  margin-bottom: 119px;
+}
+.newswp_leftnav ul li {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #2d3e5b;
+}
+.newswp_leftlogo {
+  border-bottom: 1px solid #2d3e5b;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.newswp_leftlogo img {
+  padding-bottom: 8px;
+}
+.newswp_leftnav ul li a {
+  padding-left: 25px;
+  color: #fff;
+  font-size: 15px;
+  display: block;
+}
+.newswp_leftnav ul li a.current {
+  background: #3275ea;
+}
+.newswp_leftnav ul li a:hover {
+  background: #3275ea;
+}
+.newswp_leftnav ul li img {
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+
+.rightmain_content {
+  height: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.right_swp {
+  height: 100%;
+  padding-top: 65px;
+  box-sizing: border-box;
+  position: relative;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d7d9dd;
+  position: relative;
+  padding-top: 62px;
+  box-sizing: border-box;
+}
+.content_nav {
+  width: 100%;
+  height: 62px;
+  background: #f8f8f8;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.content_nav ul {
+  overflow: hidden;
+}
+.content_nav ul li {
+  float: left;
+  width: 183px;
+  height: 62px;
+  background: #ededed;
+  text-align: center;
+  line-height: 62px;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+.content_nav ul li.hot {
+  background: #3275ea;
+  color: #fff;
+}
+.new_page1 {
+  height: 100%;
+  padding: 0 26px 44px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.line {
+  width: 3px;
+  height: 17px;
+  background: #3275ea;
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 3px;
+}
+table {
+  line-height: 42px !important;
+  font-family: "微软雅黑" !important;
+}
+input {
+  border-radius: 3px;
+  border: 1px solid #d4d4d4;
+  padding-left: 8px;
+  box-sizing: border-box;
+  font-family: "微软雅黑" !important;
+}
+select {
+  border-radius: 3px;
+  border: 1px solid #d4d4d4;
+  font-family: "微软雅黑" !important;
+}
+.page2_title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 26px;
+  color: #333;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.page2_text {
+  text-align: left;
+  font-size: 16px;
+  text-indent: 32px;
+  color: #666;
+  padding: 0 100px;
+  box-sizing: border-box;
+  line-height: 42px;
+}

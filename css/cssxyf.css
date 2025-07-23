@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+body {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+ul,
+li,
+table,
+tr,
+td,
+img,
+a,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-weight: normal;
+}
+.page1 h1 {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.topp {
+  width: auto;
+  height: 81px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dh {
+  width: auto;
+  height: 50px;
+  margin: 0 auto;
+  background: #222222;
+  overflow: hidden;
+}
+.dh1 span {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  cursor: pointer;
+}
+.dh1 span a {
+  text-decoration: none;
+  color: #fff;
+}
+.dh1 {
+  width: 980px;
+  height: 50px;
+  margin: 0 auto;
+  position: relative;
+}
+.dh1 ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 480px;
+}
+.dh1 ul li {
+  float: left;
+  width: 240px;
+  line-height: 50px;
+  text-align: center;
+}
+.dh1 ul li a {
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: 16px;
+}
+.dh ul li a:hover {
+  background: #545454;
+  height: 48px;
+}
+.shijian {
+  width: 980px;
+  height: 1000px;
+  height: 25px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+.shuoming2 {
+  width: 880px;
+  height: 1000px;
+  margin: 0 auto;
+  line-height: 30px;
+  text-indent: 24px;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.shuoming {
+  width: 880px;
+  height: 1000px;
+  margin: 0 auto;
+  line-height: 30px;
+  text-indent: 24px;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.hh {
+  height: 1000px;
+}
+.page3,
+.page2,
+.page4 {
+  display: none;
+}
+.p1,
+.p2,
+.p3,
+.p4 {
+  cursor: pointer;
+}
+.page2 {
+  margin-top: 60px;
+} /* CSS Document */
+::-webkit-input-placeholder {
+  color: #000;
+}
+.tc {
+  width: 468px;
+  height: 211px;
+  background: url(../images/tcbg2.png) top center no-repeat;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -234px;
+  margin-top: -105px;
+  font-family: "Microsoft YaHei", Arial;
+  display: none;
+}
+.tc h3 {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.tc p {
+  width: 374px;
+  padding-left: 30px;
+  padding-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.tc span.confirm {
+  width: 50px;
+  height: 25px;
+  border: 1px solid #3c79ee;
+  position: absolute;
+  bottom: 42px;
+  right: 30px;
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
+}
+.tc .close {
+  font-weight: normal;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: #727272;
+  cursor: pointer;
+}

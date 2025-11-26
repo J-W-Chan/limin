@@ -1,18 +1,23 @@
 // 用户认证和登录管理公共模块
 
 $(function () {
-	// Base64URL 解码辅助函数
+	// Base64URL 解码辅助函数 (支持中文)
 	function base64UrlDecode(str) {
-		// 替换 URL safe 字符
+		// 1. Base64URL → Base64
 		str = str.replace(/-/g, '+').replace(/_/g, '/');
-		
-		// 添加 padding
 		while (str.length % 4) {
 			str += '=';
 		}
 		
-		// 解码
-		return atob(str);
+		// 2. Base64 解码
+		var binary = atob(str);
+		
+		// 3. UTF-8 解码 (支持中文)
+		var bytes = '';
+		for (var i = 0; i < binary.length; i++) {
+			bytes += '%' + ('00' + binary.charCodeAt(i).toString(16)).slice(-2);
+		}
+		return decodeURIComponent(bytes);
 	}
 
 	// 检查是否登录

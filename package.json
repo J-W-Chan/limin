@@ -1,16 +1,14 @@
 {
   "name": "limin",
   "version": "1.0.0",
+  "description": "立名教育管理系统",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx wrangler pages dev .",
+    "deploy": "npx wrangler pages deploy ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "jsonwebtoken": "^9.0.2"
-  }
+  "dependencies": {}
 }

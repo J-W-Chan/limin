@@ -3,6 +3,8 @@ node_modules/
 
 # 包管理文件
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # 日志文件
 *.log

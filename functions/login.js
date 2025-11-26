@@ -1,5 +1,4 @@
 // functions/login.js
-import jwt from 'jsonwebtoken';
 
 export async function onRequestPost(context) {
     const { request, env } = context;
@@ -24,7 +23,6 @@ export async function onRequestPost(context) {
         ).bind(username).first();
 
         if (!user) {
-            // 安全考虑，不区分邮箱不存在和密码错误
             return new Response('Invalid username or password', { status: 401 });
         }
 
@@ -34,11 +32,10 @@ export async function onRequestPost(context) {
             return new Response('Invalid username or password', { status: 401 });
         }
 
-        // 3. 生成 JWT
-        const token = jwt.sign(
-            { userId: user.id, sub: user.username },
-            JWT_SECRET,
-            { expiresIn: '24h' }
+        // 3. 生成 JWT (使用 Web Crypto API)
+        const token = await generateJWT(
+            { userId: user.id, username: user.UserName },
+            JWT_SECRET
         );
 
         // 4. 返回 token
@@ -50,6 +47,64 @@ export async function onRequestPost(context) {
 
     } catch (error) {
         console.error('Login error:', error);
-        return new Response('Internal Server Error', { status: 500 });
+        return new Response('Internal Server Error: ' + error.message, { status: 500 });
     }
+}
+
+// 生成 JWT Token (使用 Web Crypto API)
+async function generateJWT(payload, secret) {
+    const header = {
+        alg: 'HS256',
+        typ: 'JWT'
+    };
+
+    // 添加标准声明
+    const now = Math.floor(Date.now() / 1000);
+    const jwtPayload = {
+        ...payload,
+        iat: now,
+        exp: now + (24 * 60 * 60) // 24小时后过期
+    };
+
+    // Base64URL 编码
+    const encodedHeader = base64UrlEncode(JSON.stringify(header));
+    const encodedPayload = base64UrlEncode(JSON.stringify(jwtPayload));
+
+    // 生成签名
+    const signatureInput = `${encodedHeader}.${encodedPayload}`;
+    const signature = await signHMAC(signatureInput, secret);
+
+    return `${signatureInput}.${signature}`;
+}
+
+// HMAC-SHA256 签名
+async function signHMAC(data, secret) {
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+        'raw',
+        encoder.encode(secret),
+        { name: 'HMAC', hash: 'SHA-256' },
+        false,
+        ['sign']
+    );
+
+    const signature = await crypto.subtle.sign(
+        'HMAC',
+        key,
+        encoder.encode(data)
+    );
+
+    return base64UrlEncode(signature);
+}
+
+// Base64URL 编码
+function base64UrlEncode(input) {
+    let str;
+    if (typeof input === 'string') {
+        str = btoa(unescape(encodeURIComponent(input)));
+    } else {
+        // ArrayBuffer
+        str = btoa(String.fromCharCode(...new Uint8Array(input)));
+    }
+    return str.replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
 }

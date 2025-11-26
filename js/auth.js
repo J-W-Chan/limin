@@ -1,7 +1,7 @@
 // 用户认证和登录管理公共模块
 
 $(function () {
-	//检查是否登录（可选，默认注释）
+	// 检查是否登录
 	if (!localStorage.getItem('userToken')) {
 		window.location.href = 'login.html';
 	}

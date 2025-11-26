@@ -14,16 +14,23 @@ $(function () {
 			var tokenParts = userToken.split('.');
 			if (tokenParts.length === 3) {
 				var payload = JSON.parse(atob(tokenParts[1]));
-				var username = payload.username;
-				$('#userNameDisplay').text('欢迎您，' + username);
+				console.log(payload);
+				// 注意: 后端生成的 payload 中字段名可能是 username 或 UserName
+				var username = payload.username || payload.UserName || '用户';
+				if (username) {
+					$('#userNameDisplay').text('欢迎您，' + username);
+				}
 			} else {
 				// 如果不是 JWT 格式，尝试直接解析为 JSON
 				var userData = JSON.parse(userToken);
-				var username = userData.username;
-				$('#userNameDisplay').text('欢迎您，' + username);
+				var username = userData.username || userData.UserName || '用户';
+				if (username) {
+					$('#userNameDisplay').text('欢迎您，' + username);
+				}
 			}
 		} catch (e) {
 			// 如果解析失败，显示默认文本
+			console.error('Token 解析失败:', e);
 			$('#userNameDisplay').text('欢迎您');
 		}
 	}

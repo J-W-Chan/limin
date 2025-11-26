@@ -6,7 +6,13 @@ export async function onRequestPost(context) {
     // 从环境变量获取 JWT 密钥
     const JWT_SECRET = env.JWT_SECRET;
     if (!JWT_SECRET) {
-        return new Response('JWT_SECRET is not set', { status: 500 });
+        return new Response(JSON.stringify({ 
+            error: 'JWT_SECRET is not set',
+            message: '服务器配置错误，请联系管理员' 
+        }), { 
+            status: 500,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 
     try {
@@ -14,7 +20,13 @@ export async function onRequestPost(context) {
         const { username, password } = data;
 
         if (!username || !password) {
-            return new Response('username and password are required', { status: 400 });
+            return new Response(JSON.stringify({ 
+                error: 'Missing credentials',
+                message: '请输入用户名和密码' 
+            }), { 
+                status: 400,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // 1. 从 D1 数据库查询用户
@@ -23,13 +35,25 @@ export async function onRequestPost(context) {
         ).bind(username).first();
 
         if (!user) {
-            return new Response('Invalid username or password', { status: 401 });
+            return new Response(JSON.stringify({ 
+                error: 'Invalid credentials',
+                message: '用户名或密码错误' 
+            }), { 
+                status: 401,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // 2. 验证密码
         const isPasswordValid = password === user.Password;
         if (!isPasswordValid) {
-            return new Response('Invalid username or password', { status: 401 });
+            return new Response(JSON.stringify({ 
+                error: 'Invalid credentials',
+                message: '用户名或密码错误' 
+            }), { 
+                status: 401,
+                headers: { 'Content-Type': 'application/json' }
+            });
         }
 
         // 3. 生成 JWT (使用 Web Crypto API)
@@ -38,8 +62,12 @@ export async function onRequestPost(context) {
             JWT_SECRET
         );
 
-        // 4. 返回 token
-        return new Response(JSON.stringify({ token }), {
+        // 4. 返回成功结果
+        return new Response(JSON.stringify({ 
+            success: true,
+            token,
+            message: '登录成功'
+        }), {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -47,7 +75,13 @@ export async function onRequestPost(context) {
 
     } catch (error) {
         console.error('Login error:', error);
-        return new Response('Internal Server Error: ' + error.message, { status: 500 });
+        return new Response(JSON.stringify({ 
+            error: 'Internal server error',
+            message: '服务器内部错误: ' + error.message 
+        }), { 
+            status: 500,
+            headers: { 'Content-Type': 'application/json' }
+        });
     }
 }
 

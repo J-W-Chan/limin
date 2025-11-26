@@ -21,11 +21,17 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.error || 'Login failed');
+            // 显示后端返回的中文错误消息
+            throw new Error(data.message || data.error || '登录失败');
         }
 
         // 登录成功，存储 JWT
         localStorage.setItem('userToken', data.token);
+        
+        // 显示成功消息(可选)
+        if (data.message) {
+            console.log(data.message);
+        }
         
         // 跳转到受保护的页面
         window.location.href = 'indexNew.html';

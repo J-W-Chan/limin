@@ -4,7 +4,7 @@ export async function onRequest(context) {
     const { request, next, env } = context;
 
     // 跳过登录接口本身的验证
-    if (new URL(request.url).pathname === '/login') {
+    if (new URL(request.url).pathname === '/login.html') {
         return next();
     }
 

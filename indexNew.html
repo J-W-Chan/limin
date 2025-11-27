@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="css/cxcalendar.css" type="text/css" />
 	<link type="text/css" href="css/cssxyf.css" rel="stylesheet" />
 	<link type="text/css" href="css/style.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/auth.js"></script>
+	<!-- <script type="text/javascript" src="js/auth.js"></script> -->
 	<script type="text/javascript" src="js/maydate.js"></script>
-	<script type="text/javascript" src="js/timexyf.js"></script>
+	<!-- <script type="text/javascript" src="js/timexyf.js"></script> -->
 	<script type="text/javascript">
 		function startTime() {
 			//获取当前系统日期  
@@ -316,83 +316,28 @@
 													style="width:180px;height:45px;background:#38b7ff; font-size: 16px; color:#fff; border-radius: 5px; line-height:45px;cursor:pointer;outline:none;border:0;text-align:center;"
 													class="shenqing-btn" value="立即申请" type="button" /> </td>
 										</tr>
-										<tr>
-											<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
-												<p
-													style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; ">
-													<span class="line"></span> 助学金申请名单一览表
-												</p>
-											</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">报名学员姓名</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">手机号</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">身份证后四位</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">程俊</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">155****0920</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************727X</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">何伟</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">155****8887</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************5012</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">霍远秦</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">131****7700</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************2598</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">江良</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">131****2288</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************6575</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">李征</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">188****8501</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************2512</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">闫宇</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">188****3847</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************8137</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">聂剑平</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">156****9760</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">
-												**************311X</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-											<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">&nbsp;</td>
-										</tr>
-										<tr>
-											<td height="40" colspan="5" align="center" bgcolor="#FFFFFF"><span
-													style="width:140px;height:30px;line-height:30px;background:#484848;color:#fff;padding:3px 6px;cursor:pointer;">上一页</span>
-												第10页/共10页 <span
-													style="width:140px;height:30px;line-height:30px;background:#9e9e9e;color:#fff;padding:3px 6px;cursor:pointer;">下一页</span>
-											</td>
-										</tr>
+									<tr>
+										<td height="52" colspan="5" align="left" bgcolor="#f6f6f6">
+											<p
+												style="font-family:'微软雅黑'; padding-left: 30px; font-size:16px; color:#666666; ">
+												<span class="line"></span> 助学金申请名单一览表
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">报名学员姓名</td>
+										<td height="40" align="center" bgcolor="#FFFFFF">手机号</td>
+										<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">身份证后四位</td>
+									</tr>
+									<tbody id="studentTableBody">
+										<!-- 动态生成的学员信息将显示在这里 -->
+									</tbody>
+									<!-- <tr>
+										<td height="40" colspan="5" align="center" bgcolor="#FFFFFF">
+											<span id="refreshBtn" style="width:140px;height:30px;line-height:30px;background:#3275ea;color:#fff;padding:3px 6px;cursor:pointer;border-radius:3px;">刷新数据</span>
+											<span style="margin: 0 10px;">显示 10 条 / 共 100 条</span>
+										</td>
+									</tr> -->
 									</tbody>
 								</table>
 							</form>
@@ -606,6 +551,148 @@
 				$('.tc').show();
 			}
 		})
+	</script>
+	
+	<script type="text/javascript">
+		// 100条虚拟学员数据 (传统型为主,少量叠字型)
+		var allStudents = [
+			{name: "张伟明", phone: "138****2341", idCard: "**************5678"},
+			{name: "王建国", phone: "139****1234", idCard: "**************9012"},
+			{name: "李文静", phone: "136****5678", idCard: "**************3456"},
+			{name: "刘志强", phone: "135****9012", idCard: "**************7890"},
+			{name: "陈静雯", phone: "137****3456", idCard: "**************1234"},
+			{name: "杨俊杰", phone: "188****7890", idCard: "**************5678"},
+			{name: "赵明远", phone: "159****1234", idCard: "**************9012"},
+			{name: "黄天华", phone: "158****5678", idCard: "**************3456"},
+			{name: "周婷婷", phone: "157****9012", idCard: "**************7890"},
+			{name: "吴鹏飞", phone: "156****3456", idCard: "**************1234"},
+			{name: "徐海洋", phone: "155****7890", idCard: "**************5678"},
+			{name: "孙嘉诚", phone: "152****1234", idCard: "**************9012"},
+			{name: "马超群", phone: "151****5678", idCard: "**************3456"},
+			{name: "朱雅琪", phone: "150****9012", idCard: "**************7890"},
+			{name: "胡晓东", phone: "189****3456", idCard: "**************1234"},
+			{name: "郭亮亮", phone: "178****7890", idCard: "**************5678"},
+			{name: "林佳怡", phone: "177****1234", idCard: "**************9012"},
+			{name: "何思远", phone: "176****5678", idCard: "**************3456"},
+			{name: "高峰峰", phone: "175****9012", idCard: "**************7890"},
+			{name: "梁晓峰", phone: "174****3456", idCard: "**************123X"},
+			{name: "郑雪梅", phone: "173****7890", idCard: "**************5678"},
+			{name: "谢云龙", phone: "153****1234", idCard: "**************9012"},
+			{name: "韩雨薇", phone: "186****5678", idCard: "**************3456"},
+			{name: "唐艳红", phone: "185****9012", idCard: "**************7890"},
+			{name: "冯志伟", phone: "184****3456", idCard: "**************1234"},
+			{name: "于浩然", phone: "183****7890", idCard: "**************5678"},
+			{name: "董文博", phone: "182****1234", idCard: "**************9012"},
+			{name: "萧淑敏", phone: "181****5678", idCard: "**************3456"},
+			{name: "程俊杰", phone: "155****0920", idCard: "**************727X"},
+			{name: "何伟伟", phone: "155****8887", idCard: "**************5012"},
+			{name: "曹振华", phone: "180****9012", idCard: "**************7890"},
+			{name: "袁佳琳", phone: "147****3456", idCard: "**************1234"},
+			{name: "邓建军", phone: "146****7890", idCard: "**************5678"},
+			{name: "许雅芳", phone: "145****1234", idCard: "**************9012"},
+			{name: "傅晓明", phone: "144****5678", idCard: "**************3456"},
+			{name: "沈婷婷", phone: "134****9012", idCard: "**************7890"},
+			{name: "彭志远", phone: "187****3456", idCard: "**************1234"},
+			{name: "吕秀英", phone: "170****7890", idCard: "**************5678"},
+			{name: "苏文涛", phone: "171****1234", idCard: "**************9012"},
+			{name: "卢建平", phone: "198****5678", idCard: "**************3456"},
+			{name: "蒋丽华", phone: "199****9012", idCard: "**************7890"},
+			{name: "蔡雅婷", phone: "166****3456", idCard: "**************1234"},
+			{name: "贾俊豪", phone: "167****7890", idCard: "**************5678"},
+			{name: "丁晓雷", phone: "168****1234", idCard: "**************9012"},
+			{name: "魏志强", phone: "169****5678", idCard: "**************3456"},
+			{name: "薛宇航", phone: "191****9012", idCard: "**************7890"},
+			{name: "叶琳琳", phone: "192****3456", idCard: "**************1234"},
+			{name: "阎凯文", phone: "193****7890", idCard: "**************5678"},
+			{name: "余建华", phone: "194****1234", idCard: "**************9012"},
+			{name: "潘晓光", phone: "195****5678", idCard: "**************3456"},
+			{name: "杜秀珍", phone: "196****9012", idCard: "**************7890"},
+			{name: "戴文静", phone: "197****3456", idCard: "**************1234"},
+			{name: "夏雨晴", phone: "132****7890", idCard: "**************5678"},
+			{name: "钟志刚", phone: "133****1234", idCard: "**************9012"},
+			{name: "汪淑兰", phone: "131****5678", idCard: "**************3456"},
+			{name: "田浩宇", phone: "130****9012", idCard: "**************7890"},
+			{name: "任秀梅", phone: "156****3456", idCard: "**************1234"},
+			{name: "姜文涛", phone: "157****7890", idCard: "**************5678"},
+			{name: "范婷婷", phone: "158****1234", idCard: "**************9012"},
+			{name: "方志明", phone: "159****5678", idCard: "**************3456"},
+			{name: "石建国", phone: "138****9012", idCard: "**************7890"},
+			{name: "姚文斌", phone: "139****3456", idCard: "**************1234"},
+			{name: "谭丽华", phone: "136****7890", idCard: "**************5678"},
+			{name: "廖鹏程", phone: "135****1234", idCard: "**************9012"},
+			{name: "邹慧敏", phone: "137****5678", idCard: "**************3456"},
+			{name: "熊晓峰", phone: "188****9012", idCard: "**************7890"},
+			{name: "金秀兰", phone: "189****3456", idCard: "**************1234"},
+			{name: "陆建华", phone: "178****7890", idCard: "**************5678"},
+			{name: "郝志勇", phone: "177****1234", idCard: "**************9012"},
+			{name: "孔超凡", phone: "176****5678", idCard: "**************3456"},
+			{name: "白晶晶", phone: "175****9012", idCard: "**************7890"},
+			{name: "崔宇轩", phone: "174****3456", idCard: "**************1234"},
+			{name: "康雅文", phone: "173****7890", idCard: "**************5678"},
+			{name: "毛志强", phone: "153****1234", idCard: "**************9012"},
+			{name: "邱淑珍", phone: "186****5678", idCard: "**************3456"},
+			{name: "秦晓峰", phone: "185****9012", idCard: "**************7890"},
+			{name: "江建平", phone: "131****2288", idCard: "**************6575"},
+			{name: "史辉煌", phone: "183****7890", idCard: "**************5678"},
+			{name: "顾文龙", phone: "182****1234", idCard: "**************9012"},
+			{name: "侯志军", phone: "181****5678", idCard: "**************3456"},
+			{name: "邵淑英", phone: "180****9012", idCard: "**************7890"},
+			{name: "孟建国", phone: "147****3456", idCard: "**************1234"},
+			{name: "龙晓玲", phone: "146****7890", idCard: "**************5678"},
+			{name: "万志伟", phone: "145****1234", idCard: "**************9012"},
+			{name: "段秀芳", phone: "144****5678", idCard: "**************3456"},
+			{name: "章文武", phone: "134****9012", idCard: "**************7890"},
+			{name: "钱雅丽", phone: "187****3456", idCard: "**************1234"},
+			{name: "汤志鹏", phone: "170****7890", idCard: "**************5678"},
+			{name: "尹秀华", phone: "171****1234", idCard: "**************9012"},
+			{name: "黎晨曦", phone: "198****5678", idCard: "**************3456"},
+			{name: "易建平", phone: "199****9012", idCard: "**************7890"},
+			{name: "常志刚", phone: "166****3456", idCard: "**************1234"},
+			{name: "武淑兰", phone: "167****7890", idCard: "**************5678"},
+			{name: "乔昊天", phone: "168****1234", idCard: "**************9012"},
+			{name: "贺文涛", phone: "169****5678", idCard: "**************3456"},
+			{name: "赖志强", phone: "191****9012", idCard: "**************7890"},
+			{name: "龚秀珍", phone: "192****3456", idCard: "**************1234"},
+			{name: "文凯旋", phone: "193****7890", idCard: "**************5678"},
+			{name: "霍远秦", phone: "131****7700", idCard: "**************2598"},
+			{name: "李征宇", phone: "188****8501", idCard: "**************2512"}
+		];
+
+		// 随机打乱数组并取前10条
+		function getRandomStudents() {
+			var shuffled = allStudents.slice(); // 复制数组
+			for (var i = shuffled.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = shuffled[i];
+				shuffled[i] = shuffled[j];
+				shuffled[j] = temp;
+			}
+			return shuffled.slice(0, 10); // 返回前10条
+		}
+
+		// 渲染学员表格
+		function renderStudentTable() {
+			var students = getRandomStudents();
+			var html = '';
+			for (var i = 0; i < students.length; i++) {
+				html += '<tr>';
+				html += '<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">' + students[i].name + '</td>';
+				html += '<td height="40" align="center" bgcolor="#FFFFFF">' + students[i].phone + '</td>';
+				html += '<td height="40" colspan="2" align="center" bgcolor="#FFFFFF">' + students[i].idCard + '</td>';
+				html += '</tr>';
+			}
+			$('#studentTableBody').html(html);
+		}
+
+		// 页面加载时渲染
+		$(function() {
+			renderStudentTable();
+			
+			// 刷新按钮点击事件
+			$('#refreshBtn').click(function() {
+				renderStudentTable();
+			});
+		});
 	</script>
 </body>
 

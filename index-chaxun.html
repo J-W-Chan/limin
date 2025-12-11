@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/cxcalendar.css" type="text/css" />
 	<link type="text/css" href="css/cssxyf.css" rel="stylesheet" />
 	<link type="text/css" href="css/style.css" rel="stylesheet" />
-	<script type="text/javascript" src="js/auth.js"></script>
+	<!-- <script type="text/javascript" src="js/auth.js"></script> -->
 	<script type="text/javascript">
 		// 页面特定的日期时间显示
 		$(function () {
@@ -113,6 +113,21 @@
 		.review-container input:focus,
 		.review-container textarea:focus {
 			outline: none;
+		}
+		/* placeholder 文字置灰 */
+		.review-container input::placeholder,
+		.review-container textarea::placeholder {
+			color: #999;
+			opacity: 1;
+		}
+		/* 兼容不同浏览器 */
+		.review-container input::-webkit-input-placeholder,
+		.review-container textarea::-webkit-input-placeholder {
+			color: #999;
+		}
+		.review-container input:-ms-input-placeholder,
+		.review-container textarea:-ms-input-placeholder {
+			color: #999;
 		}
 	</style>
 </head>
@@ -314,18 +329,14 @@
 										<td>手机号</td>
 										<td><input type="tel" placeholder="请输入手机号" /></td>
 									</tr>
-									<tr>
-										<td>证件类型</td>
-										<td><input type="text" placeholder="请输入证件类型" /></td>
-									</tr>
-									<tr>
-										<td>证件号码</td>
-										<td><input type="text" placeholder="请输入证件号码" /></td>
-									</tr>
-									<tr>
-										<td>邮箱</td>
-										<td><input type="email" placeholder="请输入邮箱" /></td>
-									</tr>
+								<tr>
+									<td>证件类型</td>
+									<td><input type="text" value="身份证" /></td>
+								</tr>
+								<tr>
+									<td>证件号码</td>
+									<td><input type="text" placeholder="请输入证件号码" /></td>
+								</tr>
 									<tr>
 										<td>报考地区</td>
 										<td><input type="text" placeholder="请输入报考地区" /></td>
@@ -340,7 +351,7 @@
 									</tr>
 									<tr>
 										<td>备考状态</td>
-										<td><input type="text" placeholder="例如：合格数：87 已申请全部：85 剩余名额：2" /></td>
+										<td><input type="text" value="合格数： 已申请全部： 剩余名额：" /></td>
 									</tr>
 									<tr>
 										<td>初审编号</td>

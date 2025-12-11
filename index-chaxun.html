@@ -47,19 +47,42 @@
 			background-color: white;
 			padding: 20px;
 			border-radius: 4px;
+			position: relative;
+			max-width: 1024px;
+			margin: 0 auto;
 		}
 		.review-container h3 {
 			margin: 0 0 15px 0;
 		}
 		.review-container table {
 			width: 100%;
+			max-width: 1024px;
 			border-collapse: collapse;
 			margin-top: 10px;
+			position: relative;
+		}
+		/* 审核通过水印 */
+		.review-watermark {
+			position: absolute;
+			top: 68%;
+			right: 20%;
+			transform: translate(0, -50%) rotate(-25deg);
+			font-size: 36px;
+			font-weight: bold;
+			color: #8b0000;
+			opacity: 0.3;
+			pointer-events: none;
+			z-index: 10;
+			white-space: nowrap;
+			border: 4px solid #8b0000;
+			padding: 9px 18px;
+			border-radius: 5px;
 		}
 		.review-container td {
 			padding: 8px 12px;
 			border: 1px solid #ddd;
 			line-height: 1.5;
+			position: relative;
 		}
 		.review-container td:first-child {
 			width: 200px;
@@ -278,9 +301,9 @@
 							</div>
 						</div>
 					<div class="new_page3" style="display: none;">
-						</div>
 						<div class="review-container">
 							<h3 style="color: #666666; margin-bottom: 20px;">考生服务平台 | 新生报考审核</h3>
+							<div class="review-watermark">审核通过</div>
 							<table id="tbReview">
 								<tbody>
 									<tr>

@@ -37,6 +37,61 @@
 	<script type="text/javascript" src="js/maydate.js"></script>
 	<!-- <script type="text/javascript" src="js/timexyf.js"></script> -->
 	<script type="text/javascript" src="js/calendar.js"></script>
+	<style>
+		/* 审核查询表格样式 */
+		.new_page3 {
+			max-height: calc(100vh - 250px);
+			overflow-y: auto;
+		}
+		.review-container {
+			background-color: white;
+			padding: 20px;
+			border-radius: 4px;
+		}
+		.review-container h3 {
+			margin: 0 0 15px 0;
+		}
+		.review-container table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 10px;
+		}
+		.review-container td {
+			padding: 8px 12px;
+			border: 1px solid #ddd;
+			line-height: 1.5;
+		}
+		.review-container td:first-child {
+			width: 200px;
+			text-align: center;
+		}
+		.review-container td:last-child {
+			text-align: center;
+		}
+		.review-container input[type="text"],
+		.review-container input[type="email"],
+		.review-container input[type="tel"] {
+			width: 95%;
+			padding: 6px 8px;
+			border: none;
+			background-color: #fff;
+			font-size: 14px;
+		}
+		.review-container textarea {
+			width: 95%;
+			padding: 6px 8px;
+			border: none;
+			background-color: #fff;
+			font-size: 14px;
+			font-family: "Microsoft YaHei", Arial, sans-serif;
+			resize: vertical;
+			min-height: 50px;
+		}
+		.review-container input:focus,
+		.review-container textarea:focus {
+			outline: none;
+		}
+	</style>
 </head>
 
 <body>
@@ -222,14 +277,64 @@
 								<p>4. 如有疑问，请联系客服热线：400-123-4567。</p>
 							</div>
 						</div>
-						<div class="new_page3" style="display: none;">
-							<div class="page2_title">
-								成绩查询
-							</div>
-							<div class="page2_text">
-								<p>成绩查询功能正在建设中，敬请期待...</p>
-							</div>
+					<div class="new_page3" style="display: none;">
 						</div>
+						<div class="review-container">
+							<h3 style="color: #666666; margin-bottom: 20px;">考生服务平台 | 新生报考审核</h3>
+							<table id="tbReview">
+								<tbody>
+									<tr>
+										<td>姓名</td>
+										<td><input type="text" placeholder="请输入姓名" /></td>
+									</tr>
+									<tr>
+										<td>手机号</td>
+										<td><input type="tel" placeholder="请输入手机号" /></td>
+									</tr>
+									<tr>
+										<td>证件类型</td>
+										<td><input type="text" placeholder="请输入证件类型" /></td>
+									</tr>
+									<tr>
+										<td>证件号码</td>
+										<td><input type="text" placeholder="请输入证件号码" /></td>
+									</tr>
+									<tr>
+										<td>邮箱</td>
+										<td><input type="email" placeholder="请输入邮箱" /></td>
+									</tr>
+									<tr>
+										<td>报考地区</td>
+										<td><input type="text" placeholder="请输入报考地区" /></td>
+									</tr>
+									<tr>
+										<td>主考院校</td>
+										<td><input type="text" placeholder="请输入主考院校" /></td>
+									</tr>
+									<tr>
+										<td>专业</td>
+										<td><input type="text" placeholder="请输入专业" /></td>
+									</tr>
+									<tr>
+										<td>备考状态</td>
+										<td><input type="text" placeholder="例如：合格数：87 已申请全部：85 剩余名额：2" /></td>
+									</tr>
+									<tr>
+										<td>初审编号</td>
+										<td><input type="text" id="reviewNumber" placeholder="请输入初审编号" /></td>
+									</tr>
+									<tr>
+										<td>申请状态</td>
+										<td><textarea id="reviewStatus" placeholder="请输入申请状态信息"></textarea></td>
+									</tr>
+									<tr>
+										<td>截止时间</td>
+										<td><input type="text" id="deadlineTime" placeholder="请输入截止时间" /></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 						<div class="new_page4" style="display: none;">
 							<div class="page2_title">
 								成绩审核
@@ -265,12 +370,14 @@
 			$(".tab2").addClass('hot');
 			$(".tab1,.tab3,.tab4").removeClass('hot');
 		})
-		$(".tab3").click(function () {
-			$(".new_page3").show();
-			$(".new_page1,.new_page2,.new_page4").hide();
-			$(".tab3").addClass('hot');
-			$(".tab1,.tab2,.tab4").removeClass('hot');
-		})
+	$(".tab3").click(function () {
+		$(".new_page3").show();
+		$(".new_page1,.new_page2,.new_page4").hide();
+		$(".tab3").addClass('hot');
+		$(".tab1,.tab2,.tab4").removeClass('hot');
+		// 初始化审核表单数据
+		initReviewForm();
+	})
 		$(".tab4").click(function () {
 			$(".new_page4").show();
 			$(".new_page1,.new_page2,.new_page3").hide();
@@ -414,16 +521,41 @@
 			$('#studentTableBody').html(html);
 		}
 
-		// 页面加载时渲染
-		$(function() {
+	// 页面加载时渲染
+	$(function() {
+		renderStudentTable();
+		
+		// 刷新按钮点击事件
+		$('#refreshBtn').click(function() {
 			renderStudentTable();
-			
-			// 刷新按钮点击事件
-			$('#refreshBtn').click(function() {
-				renderStudentTable();
-			});
 		});
-	</script>
+	});
+
+	// 生成随机初审编号
+	function generateReviewNumber() {
+		var prefix = 'XSC';
+		var randomNumber = '';
+		for (var i = 0; i < 12; i++) {
+			randomNumber += Math.floor(Math.random() * 10);
+		}
+		return prefix + randomNumber;
+	}
+
+	// 初始化审核表单数据
+	function initReviewForm() {
+		// 设置初审编号
+		$('#reviewNumber').val(generateReviewNumber());
+		
+		// 设置截止时间为当前日期
+		var now = new Date();
+		var year = now.getFullYear();
+		var month = String(now.getMonth() + 1).padStart(2, '0');
+		var day = String(now.getDate()).padStart(2, '0');
+		
+		// 格式：2024-11-19 23:00:00
+		$('#deadlineTime').val(year + '-' + month + '-' + day + ' 23:00:00');
+	}
+</script>
 </body>
 
 </html>

@@ -27,8 +27,12 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+.dev.vars
+.dev.vars.*
 
 # 临时文件
 *.tmp
 *.temp
 
+# Wrangler local state
+.wrangler

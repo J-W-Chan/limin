@@ -1,0 +1,7 @@
+{"_example": "Fill with {\"file\": \"<path>\", \"reason\": \"<why>\"}. Put spec/research files only — no code paths. Run `python .trellis/scripts/get_context.py --mode packages` to list available specs. Delete this line once real entries are added."}
+{"file": ".trellis/spec/frontend/index.md", "reason": "Frontend patterns"}
+{"file": ".trellis/spec/frontend/forms.md", "reason": "Login fetch form pattern"}
+{"file": ".trellis/spec/frontend/client-auth.md", "reason": "Client token gate"}
+{"file": ".trellis/spec/functions/index.md", "reason": "Functions layer"}
+{"file": ".trellis/spec/functions/api-routes.md", "reason": "API response shape"}
+{"file": ".trellis/spec/functions/env-and-d1.md", "reason": "D1 LM_User"}

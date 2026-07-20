@@ -4,13 +4,15 @@
 
 ## Pattern A — Login (network submit)
 
-**Files:** `login.html`, `js/login.js`
+**Files:** `login.html` + `js/login.js`; `add-user.html` + `js/add-user.js`
 
-- Form `#loginForm` with `#username`, `#password`, `#errorMessage`.
+- Form with text inputs + `#errorMessage` (add-user also has `#successMessage`).
 - `submit` listener calls `event.preventDefault()`.
-- `fetch('/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) })`.
+- `fetch('/<route>', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(...) })`.
 - On `!response.ok`, show `data.message || data.error` in `#errorMessage`.
-- On success, `localStorage.setItem('userToken', data.token)` then redirect to `indexNew.html`.
+- Login success: `localStorage.setItem('userToken', data.token)` then redirect to `indexNew.html`.
+- Add-user success: show Chinese `message`, `form.reset()`, stay on page to add another.
+- Add-user Id UX: on load (and after success) `GET /add-user` for `maxId`; show hint under the Id field and prefill suggested `maxId + 1`.
 
 Use this pattern for any new form that must call a Cloudflare Function.
 

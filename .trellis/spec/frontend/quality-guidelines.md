@@ -20,6 +20,7 @@
 - Documented manual checks:
   - `API_RESPONSE_FORMAT.md` — curl / browser `fetch` for `POST /login`
   - `DEPLOYMENT_GUIDE.md` — login redirect checklist after deploy
+  - Add-user: `GET/POST /add-user` after admin login; local needs `JWT_SECRET` in `.dev.vars` and D1 binding `dbLiming`
 
 When adding behavior, prefer extending those manual recipes until a test harness is intentionally introduced.
 

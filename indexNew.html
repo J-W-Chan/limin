@@ -53,10 +53,47 @@
 						<li class="right">
 							<!-- <a href="index.html"> <img src="images/img1.png" alt="" /> 返回主菜单 </a> -->
 							<span id="userNameDisplay" style="margin-right: 20px; color: #333;"></span>
+							<a id="addUserLink" href="add-user.html" style="display: none; margin-right: 20px; cursor: pointer; color: #333; text-decoration: none;">添加用户</a>
 							<a id="logoutBtn" style="cursor: pointer;"> <img src="images/img1.png" alt="" />退出登录</a>
 						</li>
 					</ul>
 				</div>
+				<script type="text/javascript">
+					(function () {
+						function base64UrlDecode(str) {
+							str = str.replace(/-/g, '+').replace(/_/g, '/');
+							while (str.length % 4) {
+								str += '=';
+							}
+							var binary = atob(str);
+							var bytes = '';
+							for (var i = 0; i < binary.length; i++) {
+								bytes += '%' + ('00' + binary.charCodeAt(i).toString(16)).slice(-2);
+							}
+							return decodeURIComponent(bytes);
+						}
+						var token = localStorage.getItem('userToken');
+						if (!token) {
+							return;
+						}
+						try {
+							var parts = token.split('.');
+							if (parts.length !== 3) {
+								return;
+							}
+							var payload = JSON.parse(base64UrlDecode(parts[1]));
+							var name = payload.username || payload.UserName || '';
+							if (name === 'admin') {
+								var link = document.getElementById('addUserLink');
+								if (link) {
+									link.style.display = 'inline';
+								}
+							}
+						} catch (e) {
+							console.error('解析 token 失败:', e);
+						}
+					})();
+				</script>
 				<div class="rightmain_content">
 					<div class="content">
 						<div class="content_nav">

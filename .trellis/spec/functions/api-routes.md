@@ -1,6 +1,6 @@
 # API Routes
 
-> Only one production API handler exists today: login.
+> Production handlers: login and add-user (Pages Functions file routing).
 
 ## File → route mapping
 
@@ -9,6 +9,7 @@ Cloudflare Pages maps `functions/<name>.js` to `/<name>`.
 | File | Method | Route |
 |------|--------|-------|
 | `functions/login.js` | POST | `/login` |
+| `functions/add-user.js` | GET, POST | `/add-user` |
 | `functions/_middleware.js` | all (passthrough) | middleware for Functions |
 
 ## Handler shape (`functions/login.js`)
@@ -42,15 +43,46 @@ Always set `headers: { 'Content-Type': 'application/json' }`.
 
 Login reads `await request.json()` and expects `{ username, password }`.
 
+### `GET /add-user` (`functions/add-user.js`)
+
+Returns current max primary key for the Id form hint:
+
+```json
+{ "success": true, "maxId": 12 }
+```
+
+Empty table → `maxId: 0`. Used by `js/add-user.js` to show「当前最大 Id」and optionally prefill `maxId + 1`.
+
+### `POST /add-user` (`functions/add-user.js`)
+
+Request JSON: `{ id, username, password }` → columns `id` / `UserName` / `Password` (plaintext, same as login).
+
+**Success (200)**
+
+```json
+{ "success": true, "message": "用户创建成功" }
+```
+
+**Errors**
+
+| Status | error | message（示例） |
+|--------|-------|----------------|
+| 400 | Missing fields | 请填写 Id、用户名和密码 |
+| 409 | Duplicate id | Id 已存在 |
+| 409 | Duplicate username | 用户名已存在 |
+| 500 | Internal server error | 服务器内部错误: … |
+
+No server-side JWT/admin check (accepted risk; page gate is client-only).
+
 ## Middleware reality
 
-`functions/_middleware.js` documents that static HTML is not gated here and currently `return next()` for all requests. Auth for pages is client-side (`js/auth.js`).
+`functions/_middleware.js` documents that static HTML is not gated here and currently `return next()` for all requests. Auth for pages is client-side (`js/auth.js` or page-specific gates like `js/add-user.js`).
 
 ## Rules for new endpoints
 
 - Add `functions/<route>.js` exporting `onRequestGet` / `onRequestPost` / etc. as needed.
 - Prefer the same dual-field error style (`error` + Chinese `message`) so existing UI patterns can show `data.message`.
-- Keep JWT helpers local to the handler file until a second endpoint forces shared extraction (no shared `lib/` exists yet).
+- Keep JWT helpers local to the handler file until a shared extract is justified (login still owns its helpers; add-user does not mint tokens).
 
 ## Anti-patterns
 
